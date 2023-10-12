@@ -1,0 +1,19 @@
+<svg id="Upcoming_shifts" data-name="Upcoming shifts" xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46">
+  <g id="Group_34229" data-name="Group 34229">
+    <g id="Group_34228" data-name="Group 34228">
+      <g id="Group_34227" data-name="Group 34227">
+        <path id="Path_35380" data-name="Path 35380" d="M46,46.043A4.043,4.043,0,0,0,41.957,42H4.043A4.043,4.043,0,0,0,0,46.043v8.086a1.348,1.348,0,0,0,1.348,1.348h43.3A1.348,1.348,0,0,0,46,54.129Z" transform="translate(0 -38.227)" fill="#ff6565"/>
+        <g id="Group_34225" data-name="Group 34225" transform="translate(0 15.902)">
+          <path id="Path_35382" data-name="Path 35382" d="M0,177v26.055A4.048,4.048,0,0,0,4.043,207.1H41.957A4.048,4.048,0,0,0,46,203.055V177Z" transform="translate(0 -177)" fill="#f2f5f8"/>
+        </g>
+        <g id="Group_34226" data-name="Group 34226" transform="translate(5.48)">
+          <path id="Path_35384" data-name="Path 35384" d="M181,1.348v6.2a1.348,1.348,0,0,0,2.7,0v-6.2a1.348,1.348,0,0,0-2.7,0Z" transform="translate(-170.219)" fill="#fbbc05"/>
+          <path id="Path_35385" data-name="Path 35385" d="M421,1.348v6.2a1.348,1.348,0,0,0,2.7,0v-6.2a1.348,1.348,0,0,0-2.7,0Z" transform="translate(-388.656)" fill="#fbbc05"/>
+          <path id="Path_35386" data-name="Path 35386" d="M301,1.348v6.2a1.348,1.348,0,0,0,2.7,0v-6.2a1.348,1.348,0,0,0-2.7,0Z" transform="translate(-279.438)" fill="#fbbc05"/>
+          <path id="Path_35387" data-name="Path 35387" d="M61,1.348v6.2a1.348,1.348,0,0,0,2.7,0v-6.2a1.348,1.348,0,0,0-2.7,0Z" transform="translate(-61)" fill="#fbbc05"/>
+        </g>
+      </g>
+    </g>
+    <path id="Path_35388" data-name="Path 35388" d="M120.254,267.785l-5.391-5.391a1.348,1.348,0,1,0-1.906,1.906l3.09,3.09h-23.7a1.348,1.348,0,0,0,0,2.7h23.7l-3.09,3.09a1.348,1.348,0,1,0,1.906,1.906l5.391-5.391A1.348,1.348,0,0,0,120.254,267.785Z" transform="translate(-82.824 -238.46)" fill="#34a853"/>
+  </g>
+</svg>
