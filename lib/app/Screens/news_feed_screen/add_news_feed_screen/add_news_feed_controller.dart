@@ -12,6 +12,7 @@ import 'package:social_media_app/app/Constants/get_storage.dart';
 import 'package:social_media_app/app/Network/services/graphql_services/graphql_queries.dart';
 
 import '../../../Constants/graphql_constant.dart';
+import '../../../Routes/app_pages.dart';
 
 class AddNewsFeedController extends GetxController {
   RxBool isRequireConfirmation = true.obs;
@@ -81,6 +82,7 @@ class AddNewsFeedController extends GetxController {
       final QueryResult result = await getClient().mutate(options);
       print('**********$result');
       if (result.data != null) {
+        Get.offAndToNamed(Routes.homeScreen);
       } else {
         Utils.validationCheck(
             title: "Error", message: 'Something went wrong!!');

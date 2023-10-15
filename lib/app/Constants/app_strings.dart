@@ -83,7 +83,8 @@ class AppStrings {
   static var dashboard = 'Dashboard';
   static var newsFeed = 'News Feed';
   static var schedule = 'Schedule';
-  static var timesheets = 'Timesheets';
+  static var follower = 'Follower';
+   static var others = 'Others';
   static var people = 'People';
   static var search = 'Search';
   static var searchLocations = 'Search Locations';

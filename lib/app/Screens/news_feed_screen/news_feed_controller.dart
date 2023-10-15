@@ -18,36 +18,28 @@ class NewsFeedController extends GetxController {
   @override
   void onInit() async {
     super.onInit();
-    print('****');
     await getNewsFeedApi();
   }
 
   Future<void> getNewsFeedApi() async {
     try {
       isLoading.value = true;
-      print('&&&&&&');
       final result = await getClient().query(
         QueryOptions(
           document: gql(getNewsFeedByPersonId),
-          variables: {
-            'input': {
-              'user_id': getData(AppConstance.currentUserPersonID),
-
-            }
-          },
         ),
       );
       print(result);
-      
       if (result.hasException) {
         Utils.validationCheck(
             title: 'Error', message: 'Something went wrong!!');
-        // Get.offAllNamed(Routes.login);
+        Get.offAllNamed(Routes.homeScreen);
         return;
       }
 
       if (result.data != null) {
-        final data = result.data!['posts'] as List<dynamic>;
+        final data = result.data!['getPosts'] as List<dynamic>;
+
         newsFeed.value = data
             .map(
               (e) => NewsFeedModel.fromJson(e as Map<String, dynamic>),
@@ -58,11 +50,14 @@ class NewsFeedController extends GetxController {
             QueryOptions(
               document: gql(getUserById),
               variables: {
-                'user_id': newsFeed.value[i].userId,
+                'input': {
+                  'user_id': newsFeed.value[i].userId,
+                }
               },
             ),
           );
-          final data = user.data!['user'] as dynamic;
+          print('&&&&&&&&&$user');
+          final data = user.data!['getUserById'] as dynamic;
           users.value.add(UserModel.fromJson(data as Map<String, dynamic>));
         }
       }

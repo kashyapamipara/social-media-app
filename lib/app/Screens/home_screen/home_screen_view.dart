@@ -58,33 +58,38 @@ class HomeScreenView extends GetView<HomeScreenController> {
               ),
             ),
           ),
-          Padding(
-            padding: EdgeInsets.only(bottom: 2.h, left: 4.w, right: 4.w),
-            child: Container(
-              width: 100.w,
-              height: 20.h,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: AppColors.PRIMARY_COLOR),
-              child: Center(
-                  child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.group,
-                    color: AppColors.WHITE_COLOR,
-                    size: 30.sp,
-                  ),
-                  SizedBox(
-                    width: 4.w,
-                  ),
-                  Text(
-                    'People',
-                    style: TextStyle(
-                        color: AppColors.WHITE_COLOR, fontSize: 20.sp),
-                  )
-                ],
-              )),
+          InkWell(
+            onTap: () {
+              Get.toNamed(Routes.peopleScreen);
+            },
+            child: Padding(
+              padding: EdgeInsets.only(bottom: 2.h, left: 4.w, right: 4.w),
+              child: Container(
+                width: 100.w,
+                height: 20.h,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: AppColors.PRIMARY_COLOR),
+                child: Center(
+                    child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.group,
+                      color: AppColors.WHITE_COLOR,
+                      size: 30.sp,
+                    ),
+                    SizedBox(
+                      width: 4.w,
+                    ),
+                    Text(
+                      'People',
+                      style: TextStyle(
+                          color: AppColors.WHITE_COLOR, fontSize: 20.sp),
+                    )
+                  ],
+                )),
+              ),
             ),
           ),
         ]),
@@ -92,8 +97,6 @@ class HomeScreenView extends GetView<HomeScreenController> {
             backgroundColor: AppColors.PRIMARY_COLOR,
             onPressed: () async {
               await controller.logOut();
-            
-              
             },
             child: Icon(Icons.logout)),
       );

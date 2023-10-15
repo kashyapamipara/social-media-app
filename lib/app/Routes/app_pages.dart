@@ -13,6 +13,8 @@ import 'package:social_media_app/app/Screens/splash_screen/splash_view.dart';
 import 'package:get/get.dart';
 
 import '../Screens/home_screen/home_screen_binding.dart';
+import '../Screens/people_screen/people_binding.dart';
+import '../Screens/people_screen/people_view.dart';
 import '../Screens/register_screen/register_binding.dart';
 
 part 'app_routes.dart';
@@ -68,6 +70,14 @@ class AppPages {
       name: Routes.followUnfollowScreen,
       page: () => const FollowUnFollowView(),
       binding: FollowUnFollowBinding(),
+      transition: Transition.fadeIn,
+      transitionDuration: transitionDuration,
+    ),
+
+       GetPage(
+      name: Routes.peopleScreen,
+      page: () => const PeopleView(),
+      binding: PeopleBinding(),
       transition: Transition.fadeIn,
       transitionDuration: transitionDuration,
     ),

@@ -18,6 +18,6 @@ class HomeScreenController extends GetxController {
   Future<void> logOut() async {
     await FirebaseAuth.instance.signOut();
     clearData();
-    Get.offAndToNamed(Routes.newsFeed);
+    Get.offAndToNamed(Routes.login);
   }
 }

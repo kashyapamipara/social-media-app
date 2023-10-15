@@ -10,8 +10,8 @@
 // }
 //            ''';
 const String getNewsFeedByPersonId = '''
-  query GetPostsByUser(\$input: PostUserInput!) {
-    getPostsByUser(arg1: \$input) {
+  query GetPostsByUser {
+    getPosts  {
       user_id
       text
       created_at
@@ -20,6 +20,7 @@ const String getNewsFeedByPersonId = '''
   }
 ''';
 
+
 String createUser = '''
     mutation InsertUser(\$input: UserInput!) {
       insertOneUser(arg1: \$input) {
@@ -27,7 +28,7 @@ String createUser = '''
         email
         image_url
         user_id
-        userName
+        user_name
       }
     }
   ''';
@@ -45,22 +46,43 @@ String addNewsFeed = '''
     }
   ''';
 
-String getUserById = r'''
-       query GetUserById($user_id: String!) {
-  user(query: { user_id: $user_id }) {
-    _id
+String postFollower = '''
+    mutation InsertFollower(\$input: PostFollowerInput!) {
+      postFollower(arg1: \$input) {
+      
+   user_id
+   follower_id
+      }
+    }
+  ''';
+
+String getUserById = '''
+       query GetUserById(\$input: GetUserByIdInput!) {
+  getUserById( arg1: \$input ) {
     email
     image_url
-    userName
+    user_id
+    user_name
   }
   }
           ''';
 
-String getAllUsers = r'''query GetAllUsers {
-  users {
-    _id
+String getAllUsers = '''query GetAllUsers {
+  getAllUsers {
+    user_id
     email
     image_url
-    userName
+    user_name
   }
 }''';
+
+String getAllFollowers = '''
+       query GetUserById(\$input: GetFollowerInput!) {
+  getAllFollowers( arg1: \$input ) {
+    
+    
+    user_id
+    follower_id
+  }
+  }
+          ''';

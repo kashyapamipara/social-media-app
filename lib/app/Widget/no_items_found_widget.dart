@@ -50,7 +50,7 @@ class NoItemsFoundWidget extends StatelessWidget {
             onPressed: () {
               controller.pagingController.refresh();
             },
-            buttonText: AppStrings.tryAgain,
+            buttonText: AppStrings.tryAgain
           ),
         ],
       ),

@@ -33,7 +33,7 @@ class ButtonWidget extends StatelessWidget {
     this.child,
     this.buttonBorderSide,
     this.buttonElevation,
-    this.textOverflow,
+    this.textOverflow
   }) : super(key: key);
 
   @override

@@ -9,4 +9,5 @@ abstract class Routes {
 static const newsFeed = '/news_feed';
   static const addNewsFeed = '/add_news_feed';
    static const followUnfollowScreen = '/follow_unfollow_screen';
+      static const peopleScreen = '/people_screen';
 }

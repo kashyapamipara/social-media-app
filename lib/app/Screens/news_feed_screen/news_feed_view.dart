@@ -68,24 +68,33 @@ class NewsFeedView extends GetView<NewsFeedController> {
             ),
 
             controller.isLoading.value
-                ? CircularProgressIndicator(color: AppColors.PRIMARY_COLOR,)
-                : ListView.builder(
-                    shrinkWrap: true,
-                    itemBuilder: (context, index) {
-                      return PostTileWidget(
-                        postMediaURLs:
-                            controller.newsFeed.value[index].imageUrl!,
-                        personId: getData(AppConstance.currentUserPersonID),
-                        personName: controller.users.value[index].userName,
-                        postCaption: controller.newsFeed.value[index].text!,
-                        isMediaAvailable:
-                            controller.newsFeed.value[index].imageUrl != 'null'
-                                ? true
-                                : false,
-                      );
-                    },
-                    itemCount: controller.newsFeed.value.length,
-                  )
+                ? Center(
+                  child: CircularProgressIndicator(
+                      color: AppColors.PRIMARY_COLOR,
+                    ),
+                )
+                : Expanded(
+                    child: ListView.builder(
+                      itemBuilder: (context, index) {
+                        print(controller.users.value[index].user_name);
+                        return PostTileWidget(
+                          personImage: controller.users.value[index].imageUrl,
+                          postMediaURLs:
+                              controller.newsFeed.value[index].imageUrl!,
+                          personId: getData(AppConstance.currentUserPersonID),
+                          personName: controller.users.value[index].user_name,
+                          postCaption: controller.newsFeed.value[index].text!,
+                          isMediaAvailable:
+                              controller.newsFeed.value[index].imageUrl !=
+                                      'null'
+                                  ? true
+                                  : false,
+                        );
+                      },
+                      itemCount: controller.newsFeed.value.length,
+                    ),
+                  ),
+            SizedBox(height: 1.h)
           ],
         ),
       );

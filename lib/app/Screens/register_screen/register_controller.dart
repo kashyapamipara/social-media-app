@@ -82,7 +82,7 @@ class RegisterController extends GetxController {
           'input': {
             '_id': userCredential.user?.uid,
             'user_id': userCredential.user?.uid,
-            'userName': nameController.text,
+            'user_name': nameController.text,
             'email': emailController.text,
             'image_url': 'https://picsum.photos/200/300',
           },

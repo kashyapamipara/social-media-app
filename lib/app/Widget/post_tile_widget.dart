@@ -5,22 +5,22 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class PostTileWidget extends StatefulWidget {
-
   final String? personName;
 
   final String? postCaption;
   final bool isMediaAvailable;
   final String postMediaURLs;
   final String? personId;
-
-  const PostTileWidget({
-    Key? key,
-    this.personName,
-    this.isMediaAvailable = false,
-    this.postCaption,
-    required this.postMediaURLs,
-    this.personId,
-  }) : super(key: key);
+  final String? personImage;
+  const PostTileWidget(
+      {Key? key,
+      this.personName,
+      this.isMediaAvailable = false,
+      this.postCaption,
+      required this.postMediaURLs,
+      this.personId,
+      this.personImage})
+      : super(key: key);
 
   @override
   State<PostTileWidget> createState() => _PostTileWidgetState();
@@ -82,7 +82,6 @@ class _PostTileWidgetState extends State<PostTileWidget>
           borderRadius: BorderRadius.circular(8),
         ),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          ///PersonName and deletePost
           Padding(
             padding: EdgeInsets.only(left: 3.w, right: 3.w, top: 1.3.h),
             child: Row(
@@ -90,6 +89,14 @@ class _PostTileWidgetState extends State<PostTileWidget>
                 children: [
                   ///PersonName
                   Row(children: [
+                    CircleAvatar(
+                      backgroundImage: NetworkImage(
+                        widget.personImage??'',
+                      ),
+                      radius: 20,
+                    
+                    ),
+                    SizedBox(width:3.w),
                     Text(
                       widget.personName ?? 'John Doe',
                       style: TextStyle(
@@ -127,7 +134,7 @@ class _PostTileWidgetState extends State<PostTileWidget>
                           panEnabled: true,
                           maxScale: 3,
                           transformationController: _transformationController,
-                          child: widget.postMediaURLs!='null'
+                          child: widget.postMediaURLs != 'null'
                               ? CachedNetworkImage(
                                   imageUrl: widget.postMediaURLs,
                                   fit: BoxFit.contain,
@@ -145,7 +152,7 @@ class _PostTileWidgetState extends State<PostTileWidget>
               },
               child: SizedBox(
                   height: 28.h,
-                  child: widget.postMediaURLs!='null'
+                  child: widget.postMediaURLs != 'null'
                       ? Center(
                           child: CachedNetworkImage(
                             imageUrl: widget.postMediaURLs,
